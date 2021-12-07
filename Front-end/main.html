@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traducteur Sociolecte Marocaine</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=950,user-scalable=no">
+  <link rel="stylesheet" href="css/Translator.css">
+  <link rel="icon" href="ico/icon.png">
+  <script type="text/javascript" src="/eel.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header hg-theme-default ">
+      <h1>Traducteur Sociolecte Marocaine<br></h1>
+    </div>
+    <div class="help-tip">
+		<p>Utiliser le clavier virtuelle pour saisir le text!</p>
+	</div>
+    <div class=" lang-choose hg-theme-default ">
+      <label class="input-text">Input language </label>
+
+      <label class="output-text">Output language : </label>
+      <select name="lang" id="lang">
+        <option value="fr">Francais</option>
+        <option value="en">Anglais</option>
+      </select>
+    </div>
+    <div class="input-output hg-theme-default ">
+      <textarea name="text" id="text_in" cols="30" rows="10" class="no-resize" placeholder="Tap on the virtual keyboard to start"></textarea>
+
+      <div>
+        <button class="tr-button first" type="button" onclick="get_input_text()">Translate</button>
+        <button class="tr-button first" type="button" onclick="Clear()"> &nbsp &nbsp Clear &nbsp&nbsp&nbsp&nbsp</button>
+      </div>
+
+      <textarea name="text" id="text_out" cols="30" rows="10" class="no-resize" placeholder="..."></textarea>
+    </div>
+    <div class="simple-keyboard hg-theme-default hg-layout-default">
+      <!--1eme ligne-->
+      <div class="hg-row">
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ز</span><span class="darija">z</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ر</span><span class="darija">r</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>د</span><span class="darija">d</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>خ</span><span class="darija">kh</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ح</span><span class="darija">7</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ج</span><span class="darija">j</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ث</span><span class="darija">ť</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ت</span><span class="darija">t</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ب</span><span class="darija">b</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ا</span>
+          <span class="darija">a</span>
+        </div>
+        <div class="hg-button hg-functionBtn hg-button-bksp" onclick="bksp()">
+          <span>backspace</span>
+        </div>
+      </div>
+      <!--2eme ligne-->
+      <div class="hg-row">
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ك</span><span class="darija">k</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ق</span><span class="darija">9</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ف</span><span class="darija">f</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>غ</span><span class="darija">gh</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ع</span><span class="darija">3</span>
+        </div>
+
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ط</span><span class="darija">T</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ض</span><span class="darija">D</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ص</span><span class="darija">S</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ش</span><span class="darija">ch</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>س</span><span class="darija">s</span>
+        </div>
+        <div class="hg-button hg-functionBtn hg-button-bksp" onclick="darija(this)">
+          <span>enter</span>
+          <span class="darija"><br></span>
+        </div>
+      </div>
+      <!--3eme ligne-->
+      <div class="hg-row">
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ك</span><span class="darija">g</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ة</span><span class="darija">A</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ء</span><span class="darija">2</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ي</span><span class="darija">i</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ي</span><span class="darija">y</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>و</span><span class="darija">o</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>و</span><span class="darija">w</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ه</span><span class="darija">h</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ن</span><span class="darija">n</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>ل</span><span class="darija">l</span>
+        </div>
+        <div class="hg-button hg-standardBtn" onclick="darija(this)">
+          <span>م</span><span class="darija">m</span>
+        </div>
+      </div>
+      <!--SPACE button-->
+      <div class="hg-button hg-functionBtn hg-button-space" onclick="darija(this)">
+        <span> </span><span>&nbsp</span>
+      </div>
+    </div>
+    <div class="footer hg-theme-default">
+      <h3>developed by : Mohammed bouqs</h3>
+      <img class="faculte" src="img/_uit.png" alt="">
+    </div>
+
+    <script src="script/Translator.js">
+    </script>
+  </div>
+</body>
+
+</html>
